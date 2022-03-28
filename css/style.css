@@ -1,0 +1,35 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0;padding: 0;}
+ul, ol{margin: 0;padding: 0;list-style: none;}
+a{color: inherit;text-decoration: none;}
+p{margin: 0;}
+
+.open_icon{position: fixed;top: 20px;right: 20px;font-size: 40px;cursor: pointer;}
+.dark_bg{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.3);z-index: -1;opacity: 0;transition: opacity 0.5s;} /* position: fixed;로 다른 컨텐츠보다 상위 층에 올라가 있어 다른 컨텐츠들이 클릭되지않으므로 opacity: 0;으로 눈에 보이지 않게 할 뿐만 아니라 z-index: -1;을 주어 한 층 내린다 또한, z-index는 transition이 적용되지 않는다 */
+.dark_bg.active{z-index: 1;opacity: 1;}
+
+.menu_box{position: fixed;top: 0;right: -100%;width: 240px;height: 100%;background: rgba(0,0,0,.9);transition: right 0.5s;}
+.menu_box.active{right: 0;z-index: 2;} /* z-index: 1;도 가능 마크업 순서상 아래 위치하므로 */
+.menu_box .close_icon{position: absolute;top: 20px;right: 20px;font-size: 40px;cursor: pointer;color: #ffffff;}
+.menu_box ul{padding: 80px 10px 0;}
+.menu_box ul li{}
+.menu_box ul li a{display: block;font-size: 17px;line-height: 40px;color: #ffffff;font-weight: bold;}
+
+.cur_size{position: fixed;right: 10px;bottom: 10px;color: #ff0000;}
+
+.banner{width: 100%;height: 100px;background: #aaaaaa;}
+.banner p{padding-top: 20px;}
+#scroll_header{width: 100%;height: 60px;background: #aaffff;padding: 0 10px;transition: background 0.5s, height 0.5s;}
+#scroll_header.sticky{position: fixed;top: 0;left: 0;height: 40px;background: #000;}
+#scroll_header .logo{float: left;}
+#scroll_header .logo a{display: block;font-size: 36px;color: #333333;line-height: 60px;transition: line-height 0.5s, color 0.5s;}
+#scroll_header.sticky .logo a{color: #ffffff;line-height: 40px;}
+#scroll_header nav{float: right;}
+#scroll_header nav ul{}
+#scroll_header nav ul:after{content: "";display: block;clear: both;}
+#scroll_header nav ul li{float: left;margin: 0 20px;}
+#scroll_header nav ul li a{display: block;font-size: 17px;color: #555555;line-height: 60px;transition: line-height 0.5s, color 0.5s;}
+#scroll_header.sticky nav ul li a{color: #ffffff;line-height: 40px;}
+.scroll_img{width: 100%;height: 300px;background-image: url(../img/tree-5.jpg);background-position: 50% 50%;background-size: cover;margin-left: -100%;transition: margin-left 0.5s;}
+.scroll_img.active{margin-left: 0;}

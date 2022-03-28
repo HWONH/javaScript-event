@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 - 이벤트</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onresize="resizeEvt();" onscroll="scrollEvt();">
+    <div class="banner">
+        <p>배너 공간</p>
+    </div>
+    <header id="scroll_header">
+        <div class="logo">
+            <a href="">LOGO</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Menu_01</a></li>
+                <li><a href="">Menu_02</a></li>
+                <li><a href="">Menu_03</a></li>
+                <li><a href="">Menu_04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="scroll_img"></div>
+    
+    <!-- 
+        이벤트 : 사용자가 일련의 동작을 수행하는 과정상 함수문을 호출하여 실행문을 실행 
+        요소 이벤트 : click, mouse, keyboard
+        전체 이벤트 : load, scroll, resize, change
+    -->
+    <h2>요소 이벤트 : mouseover & mouseout</h2>
+    <h3>직접 함수를 호출하여 이벤트를 구성(스크립트를 별도로 구성하지 않음)</h3>
+    <img src="img/boy.png" onmouseover="this.src='img/girl.png'" onmouseout="this.src='img/boy.png'" alt="이미지">
+
+    <h3>스크립트 내부의 함수문을 호출하여 이벤트를 구성</h3>
+    <img class="ch_img01" src="img/tree-1-thumb.jpg" alt="나무 1" onmouseover="call_ch01();" onmouseout="call_ch02();">
+
+    <h3>요소 이벤트 : click</h3>
+    <div class="clickEvt">
+        <ul>
+            <li><button onclick="prev();">이전 이미지</button></li>
+            <li><button onclick="next();">다음 이미지</button></li>
+        </ul>
+        <img class="ch_img02" src="img/pic-1.jpg" alt="">
+    </div>
+
+    <h2>게임 캐릭터의 진행</h2>
+    <button onclick="move();">이동</button>
+    <button onclick="add_hp();">생명력 추가(+10)</button>
+    <p class="cur_state">현재 변경된 내용</p>
+
+    <h2>반려동물 키우기</h2>
+    <p class="pet_info">반려동물 정보</p>
+    <img class="pet_img" src="" alt="">
+
+    <span class="open_icon" onclick="open_menu();">&#9776;</span> <!-- &#9776; => ≡ -->
+
+    <div class="dark_bg" onclick="close_menu();"></div>
+    
+    <nav class="menu_box">
+        <span class="close_icon" onclick="close_menu();">×</span>
+        <ul>
+            <li><a href="">About Me</a></li>
+            <li><a href="">Project</a></li>
+            <li><a href="">Portfolio</a></li>
+            <li><a href="">Contact Me</a></li>
+        </ul>
+    </nav>
+    <p class="cur_size">현재 브라우저의 사이즈 구간 : <span></span></p>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
